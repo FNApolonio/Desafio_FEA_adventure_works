@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: stg_production
+    schema: raw_adventure_works
+    tables:
+      - name: product
+        description: "Tabela contendo informações sobre produtos vendidos e produtos em processo de produção, incluindo categorias, preços, e datas de modificação."
+        columns:
+          - name: productid
+            description: "Identificador único para cada produto. Chave primária."
+            tests:
+              - unique
+              - not_null
+
+          - name: productsubcategoryid
+            description: "Identificador da subcategoria a qual o produto pertence. Refere-se à subcategoria para organização dos produtos."
+
+          - name: product_name
+            description: "Nome do produto para identificação no catálogo. Exibe o nome oficial para vendas e produção."
+
+          - name: listprice
+            description: "Preço de lista do produto. Representa o valor sugerido para venda ao cliente final."
+
+          - name: modifieddate
+            description: "Data da última modificação do registro do produto. Indica quando as informações do produto foram atualizadas."                  
+
+      - name: productcategory
+        description: "Tabela que identifica as categorias principais dos produtos, usada para agrupar e organizar os produtos em uma hierarquia."
+        columns:
+          - name: productcategoryid
+            description: "Nome da categoria de produto. Representa a classificação principal usada para agrupar os produtos."
+            tests:
+              - unique
+              - not_null
+          - name: product_category
+            description: "Nome ou identificação da categoria do produto, usada para classificar e organizar produtos em grupos específicos."
+
+          - name: modifieddate
+            description: "Data da última modificação na categoria do produto. Indica a última atualização de informações sobre a categoria."
+    
