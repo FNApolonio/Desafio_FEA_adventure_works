@@ -1,0 +1,93 @@
+version: 2
+
+sources:
+  - name: stg_person
+    schema: raw_adventure_works
+    tables:
+      - name: person
+        description: "Tabela contendo informações sobre indivíduos, incluindo detalhes de nome, tipo de pessoa e data de última modificação."
+        columns:
+          - name: businessentityid
+            description: "Identificador único para cada entidade de negócio na tabela, representando uma pessoa ou organização."
+            tests:
+              - unique
+              - not_null
+
+          - name: persontype
+            description: "Tipo de pessoa, indicando a função ou relacionamento da pessoa com a organização (ex.: cliente, funcionário, etc.)."
+
+          - name: firstname
+            description: "Primeiro nome da pessoa."
+
+          - name: middlename
+            description: "Nome do meio da pessoa. Pode estar em branco se não houver nome do meio registrado."
+
+          - name: lastname
+            description: "Sobrenome da pessoa."
+
+          - name: fullname
+            description: "Nome completo da pessoa, composto por primeiro nome, nome do meio (quando aplicável) e sobrenome."
+
+          - name: modifieddate
+            description: "Data da última modificação nos registros da pessoa."
+            
+      - name: address
+        description: "Tabela que armazena informações de endereço, incluindo linha de endereço, cidade, e identificação de estado/província."
+        columns:
+          - name: addressid
+            description: "Identificador único de cada endereço na tabela."
+            tests:
+              - unique
+              - not_null
+
+          - name: addressline
+            description: "Linha do endereço que inclui rua e número, detalhando a localização exata."
+
+          - name: city
+            description: "Nome da cidade associada ao endereço."
+
+          - name: stateprovinceid
+            description: "Identificador de estado ou província relacionado ao endereço, para localização geográfica mais detalhada."
+
+      - name: countryregion
+        description: "Tabela que contém informações sobre países e regiões utilizados no sistema, associando códigos regionais a seus respectivos nomes."
+        columns:
+          - name: countryregioncode
+            description: "Código único para identificar cada país ou região no sistema."
+            tests:
+              - unique
+              - not_null
+          
+          - name: country_name
+            description: "Nome completo do país ou região correspondente ao código."
+
+          - name: modifieddate
+            description: "Data da última atualização dos dados da tabela, refletindo a última modificação."
+
+      - name: stateprovince
+        description: "Tabela que armazena informações sobre estados e províncias, incluindo códigos de referência para regiões específicas e territórios relacionados."
+        columns:
+          - name: stateprovinceid
+            description: "Identificador único para cada estado ou província."
+            tests:
+              - unique
+              - not_null
+
+          - name: name_province
+            description: "Nome completo do estado ou província."
+
+          - name: territoryid
+            description: "Identificador do território ao qual o estado ou província pertence, permitindo agrupamento por território."
+
+          - name: stateprovincecode
+            description: "Código único do estado ou província, usado para referência rápida e correspondência."
+
+          - name: countryregioncode
+            description: "Código do país ou região associado ao estado ou província."
+
+          - name: modifieddate
+            description: "Data da última atualização do registro, indicando quando os dados foram modificados pela última vez."
+
+
+
+      
