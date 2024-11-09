@@ -33,6 +33,7 @@ sources:
             tests:
               - unique
               - not_null
+              
           - name: product_category
             description: "Nome ou identificação da categoria do produto, usada para classificar e organizar produtos em grupos específicos."
 
