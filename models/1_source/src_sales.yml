@@ -1,0 +1,219 @@
+version: 2
+
+sources:
+  - name: stg_sales
+    schema: raw_adventure_works
+    tables:
+        - name: creditcard
+          description: "Informações sobre cartões de crédito utilizados nas vendas."
+          columns:
+          - name: creditcardid
+            description: "Identificador único do cartão de crédito."
+            tests:
+            - unique
+            - not_null
+            
+          - name: cardtype
+            description: "Tipo de cartão de crédito (ex: Visa, Mastercard)."
+            
+          - name: modifieddate
+            description: "Data da última modificação do registro."
+
+        - name: customer
+          description: "Dados dos clientes."
+          columns:
+            - name: customerid
+              description: "Identificador único do cliente."
+              tests:
+                - unique
+                - not_null
+
+            - name: personid
+              description: "Identificador da pessoa associada ao cliente."
+
+            - name: storeid
+              description: "Identificador da loja associada ao cliente."
+
+            - name: territoryid
+              description: "Identificador do território do cliente."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesorderdetail
+          description: "Detalhes de cada item dos pedidos de venda."
+          columns:
+            - name: salesorderid
+              description: "Identificador único do pedido de venda."
+              tests:
+                - not_null
+
+            - name: salesorderdetailid
+              description: "Identificador único do item dentro do pedido."
+
+            - name: orderqty
+              description: "Quantidade de produtos no item do pedido."
+
+            - name: productid
+              description: "Identificador do produto vendido."
+
+            - name: unitprice
+              description: "Preço unitário do produto."
+
+            - name: unitpricediscount
+              description: "Desconto aplicado ao preço unitário."
+
+            - name: linetotal
+              description: "Total do item após desconto."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesorderheader
+          description: "Informações gerais dos pedidos de venda."
+          columns:
+            - name: salesorderid
+              description: "Identificador único do pedido de venda."
+              tests:
+                - unique
+                - not_null
+          
+            - name: customerid
+              description: "Identificador do cliente que fez o pedido."
+
+            - name: territoryid
+              description: "Identificador do território do pedido."
+
+            - name: onlineorderflag
+              description: "Indica se o pedido foi feito online (0 = Não, 1 = Sim)."
+
+            - name: creditcardid
+              description: "Identificador do cartão de crédito utilizado."
+
+            - name: subtotal
+              description: "Subtotal do pedido antes de impostos e frete."
+
+            - name: taxamt
+              description: "Valor do imposto sobre o pedido."
+
+            - name: freight
+              description: "Valor do frete do pedido."
+
+            - name: totaldue
+              description: "Valor total do pedido."
+
+            - name: orderdate
+              description: "Data do pedido."
+
+            - name: duedate
+              description: "Data prevista para entrega."
+
+            - name: shipdate
+              description: "Data de envio do pedido."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesorderheadersalesreason
+          description: "Razões associadas aos pedidos de venda."
+          columns:
+            - name: salesorderid
+              description: "Identificador do pedido de venda."
+              tests:
+                - not_null
+          
+            - name: salesreasonid
+              description: "Identificador da razão de venda."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: personcreditcard
+          description: "Relação entre pessoas e seus cartões de crédito."
+          columns:
+            - name: businessentityid
+              description: "Identificador da entidade comercial."
+              tests:
+                - unique
+                - not_null
+          
+            - name: creditcardid
+              description: "Identificador do cartão de crédito associado."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesreason
+          description: "Razões para realização de vendas."
+          columns:
+            - name: salesreasonid
+              description: "Identificador da razão de venda."
+              tests:
+                - unique
+                - not_null
+          
+            - name: promotion_name
+              description: "Nome da promoção ou motivo de venda."
+
+            - name: reasontype
+              description: "Tipo de razão para a venda (ex: promoção, demanda)."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesperson
+          description: "Informações dos vendedores."
+          columns:
+            - name: businessentityid
+              description: "Identificador do vendedor."
+              tests:
+                - unique
+                - not_null
+          
+            - name: territoryid
+              description: "Identificador do território do vendedor."
+
+            - name: salesquota
+              description: "Meta de vendas do vendedor."
+
+            - name: bonus
+              description: "Bônus do vendedor baseado nas vendas."
+
+            - name: commissionpct
+              description: "Porcentagem de comissão do vendedor."
+
+            - name: salesytd
+              description: "Total de vendas no ano até a data."
+
+            - name: saleslastyear
+              description: "Total de vendas do ano anterior."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
+
+        - name: salesterritory
+          description: "Informações dos territórios de vendas."
+          columns:
+            - name: territoryid
+              description: "Identificador do território."
+              tests:
+                - unique
+                - not_null
+          
+            - name: region_name
+              description: "Nome da região associada ao território."
+
+            - name: countryregioncode
+              description: "Código do país associado ao território."
+
+            - name: continent
+              description: "Continente do território."
+
+            - name: salesytd
+              description: "Vendas totais do território no ano até a data."
+
+            - name: saleslastyear
+              description: "Vendas totais do território no ano anterior."
+
+            - name: modifieddate
+              description: "Data da última modificação do registro."
