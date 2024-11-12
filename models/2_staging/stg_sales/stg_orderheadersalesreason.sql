@@ -1,5 +1,5 @@
 with
-    sales_order as (
+    sales_reason as (
         select
             salesorderid
             , salesreasonid
@@ -8,4 +8,4 @@ with
     )
 
 select *
-from sales_order
+from sales_reason

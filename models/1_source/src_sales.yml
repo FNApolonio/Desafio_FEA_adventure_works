@@ -84,6 +84,9 @@ sources:
             - name: territoryid
               description: "Identificador do território do pedido."
 
+            - name: status
+              description: "Status atual do pedido. 1 = Em processamento; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado"
+
             - name: onlineorderflag
               description: "Indica se o pedido foi feito online (0 = Não, 1 = Sim)."
 

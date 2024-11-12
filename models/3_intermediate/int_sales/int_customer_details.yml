@@ -1,0 +1,39 @@
+
+version: 2
+
+sources:
+  - name: int_customer_details
+    schema: raw_adventure_works
+    tables:
+      - name: customer
+        description: "Tabela com informações dos clientes."
+        columns:
+          - name: customerid
+            description: "ID único do cliente."
+            tests:
+              - unique
+              - not_null
+
+          - name: storeid
+            description: "ID da loja associada ao cliente."
+
+          - name: person_details
+            description: "Tabela com detalhes pessoais de indivíduos."
+            
+          - name: businessentityid
+            description: "ID único da entidade."
+              
+          - name: persontype
+            description: "Tipo de pessoa (ex.: cliente."
+
+          - name: firstname
+            description: "Primeiro nome."
+
+          - name: middlename
+            description: "Nome do meio."
+
+          - name: lastname
+            description: "Sobrenome."
+
+          - name: fullname
+            description: "Nome completo da pessoa."

@@ -5,38 +5,31 @@ sources:
     schema: raw_adventure_works
     tables:
       - name: product
-        description: "Tabela contendo informações sobre produtos vendidos e produtos em processo de produção, incluindo categorias, preços, e datas de modificação."
+        description: "Tabela com informações de produtos, incluindo categorias, preços e datas de modificação."
         columns:
           - name: productid
-            description: "Identificador único para cada produto. Chave primária."
+            description: "ID único do produto."
             tests:
               - unique
               - not_null
-
           - name: productsubcategoryid
-            description: "Identificador da subcategoria a qual o produto pertence. Refere-se à subcategoria para organização dos produtos."
-
+            description: "ID da subcategoria do produto."
           - name: product_name
-            description: "Nome do produto para identificação no catálogo. Exibe o nome oficial para vendas e produção."
-
+            description: "Nome do produto no catálogo."
           - name: listprice
-            description: "Preço de lista do produto. Representa o valor sugerido para venda ao cliente final."
-
+            description: "Preço de lista do produto."
           - name: modifieddate
-            description: "Data da última modificação do registro do produto. Indica quando as informações do produto foram atualizadas."                  
+            description: "Data da última atualização do produto."
 
       - name: productcategory
-        description: "Tabela que identifica as categorias principais dos produtos, usada para agrupar e organizar os produtos em uma hierarquia."
+        description: "Tabela de categorias principais dos produtos para organização hierárquica."
         columns:
           - name: productcategoryid
-            description: "Nome da categoria de produto. Representa a classificação principal usada para agrupar os produtos."
+            description: "ID da categoria do produto."
             tests:
               - unique
               - not_null
-              
           - name: product_category
-            description: "Nome ou identificação da categoria do produto, usada para classificar e organizar produtos em grupos específicos."
-
+            description: "Nome da categoria do produto."
           - name: modifieddate
-            description: "Data da última modificação na categoria do produto. Indica a última atualização de informações sobre a categoria."
-    
+            description: "Data da última atualização da categoria."
