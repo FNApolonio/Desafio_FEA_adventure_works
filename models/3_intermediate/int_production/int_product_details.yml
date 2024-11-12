@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: int_product_details
+    schema: raw_adventure_works
+    tables:
+      - name: product
+        description: "Tabela com informações sobre produtos, incluindo nome, preço e subcategoria."
+        columns:
+          - name: productid
+            description: "ID único para cada produto."
+            tests:
+              - unique
+              - not_null
+
+          - name: productsubcategoryid
+            description: "ID da subcategoria do produto."
+
+          - name: product_name
+            description: "Nome do produto."
+
+          - name: listprice
+            description: "Preço de lista do produto."
+
+          - name: product_category
+            description: "Tabela com informações sobre categorias de produtos."
+
+          - name: product_category
+            description: "Nome da categoria do produto."
+
+          - name: productsubcategoryid
+            description: "ID da subcategoria à qual o produto pertence."

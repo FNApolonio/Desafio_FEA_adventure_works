@@ -4,6 +4,7 @@ with
             salesorderid
             , customerid
             , territoryid
+            , status 
             , onlineorderflag
             , creditcardid
             , subtotal

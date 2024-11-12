@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: int_credit_details
+    schema: raw_adventure_works
+    tables:
+      - name: credit_card
+        description: "Tabela com informações dos cartões de crédito."
+        columns:
+          - name: creditcardid
+            description: "Identificador único do cartão de crédito."
+
+          - name: cardtype
+            description: "Tipo do cartão de crédito; 'Not informed' se ausente."
+
+          - name: person_creditcard
+            description: "Tabela associativa entre entidades e cartões de crédito."
+
+          - name: businessentityid
+            description: "ID da entidade associada ao cartão."
+
+          - name: modifieddate
+            description: "Data da última modificação."

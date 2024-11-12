@@ -7,7 +7,7 @@ with
             , productid
             , unitprice
             , unitpricediscount
-            ,  COALESCE(unitprice * (1.0 - COALESCE(unitpricediscount, 0.0)) * orderqty, 0.0) as linetotal
+            , COALESCE(unitprice * (1.0 - COALESCE(unitpricediscount, 0.0)) * orderqty, 0.0) as linetotal
             , modifieddate
         from {{ source('stg_sales', 'salesorderdetail') }}
     )
