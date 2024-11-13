@@ -36,7 +36,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  Desafio_FEA_adventure_works:
+  Desafio_FEA_adventure_works: # <-- Name of the project. If you renamed your project you have to change this as well
+
+      
+    # Applies to all files under models/example/
+    
+    marts:
+      +materialized: table
+      +schema: marts
+
+    intermediate:
+      +materialized: table
+      +schema: intermediate
 
     staging:
-      +materialized: table
+      +materialized: view
+      +schema: staging
+

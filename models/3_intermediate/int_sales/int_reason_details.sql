@@ -21,8 +21,8 @@ with
     , joined_reason as (
         select
             sr.salesorderid
-            ,  LISTAGG (r.promotion_name, ',') as promotion_names_agg
-            ,  LISTAGG (r.reasontype, ',') as reason_types_agg
+            ,  listagg (r.promotion_name, ', ') as promotion_names_agg
+            ,  listagg (r.reasontype, ', ') as reason_types_agg
         from
             sales_reason sr
         left join
