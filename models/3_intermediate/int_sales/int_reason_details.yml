@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: int_reason_details
+    schema: raw_adventure_works
+    tables:
+      - name: joined_reason
+        description: "Tabela com informações dos pedidos de vendas."
+        columns:
+          - name: salesorderid
+            description: "ID único do pedido de venda."
+
+          - name: sales_promotion_reason
+            description: "Tabela com promoções e razões associadas a pedidos de vendas."
+
+          - name: promotion_names_agg
+            description: "Lista de nomes de promoções aplicadas ao pedido, agregada como uma string separada por vírgulas."
+
+          - name: reason_types_agg
+            description: "Lista de tipos de razões associadas ao pedido, agregada como uma string separada por vírgulas."

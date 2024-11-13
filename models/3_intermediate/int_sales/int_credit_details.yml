@@ -18,6 +18,3 @@ sources:
 
           - name: businessentityid
             description: "ID da entidade associada ao cartão."
-
-          - name: modifieddate
-            description: "Data da última modificação."

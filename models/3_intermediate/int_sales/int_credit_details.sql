@@ -22,7 +22,6 @@ with
             cc.creditcardid
             , coalesce (cc.cardtype, 'Not informed') as cardtype
             , pc.businessentityid
-            , pc.modifieddate
         from 
             credit_card cc
         left join
