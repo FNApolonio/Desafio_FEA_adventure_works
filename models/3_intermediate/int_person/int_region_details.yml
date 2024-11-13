@@ -1,65 +1,62 @@
 version: 2
 
-sources:
+models:
   - name: int_region_details
-    schema: raw_adventure_works
-    tables:
-      - name: address
-        description: "Tabela com dados de endereço incluindo linha de endereço, cidade e estado/província."
-        columns:
-          - name: addressid
-            description: "ID único para cada endereço."
-            tests:
-              - unique
-              - not_null
+    description: "Esta tabela reúne informações sobre endereços, cidades e país/região relacionadas aos clientes."
+    columns:    
+      - name: addressid
+        description: "ID único para cada endereço."
+        tests:
+          - unique
+          - not_null 
 
-          - name: addressline
-            description: "Linha de endereço."
+      - name: addressline
+        description: "Linha de endereço."  
 
-          - name: city
-            description: "Cidade."
+      - name: city
+        description: "Cidade."    
 
-          - name: stateprovinceid
-            description: "ID do estado ou província."
+      - name: stateprovinceid
+        description: "ID do estado ou província."  
 
-          - name: state_province
-            description: "Tabela com dados de estado ou província, incluindo código e nome da província."
+      - name: state_province
+        description: "Tabela com dados de estado ou província, incluindo código e nome da província."
 
-          - name: stateprovinceid
-            description: "ID único para cada estado ou província."
+      - name: stateprovinceid
+        description: "ID único para cada estado ou província."    
 
-          - name: name_province
-            description: "Nome da província."
+      - name: name_province
+        description: "Nome da província."   
 
-          - name: stateprovincecode
-            description: "Código do estado ou província."
+      - name: stateprovincecode
+        description: "Código do estado ou província."   
 
-          - name: countryregioncode
-            description: "Código da região do país."
+      - name: countryregioncode
+        description: "Código da região do país."    
 
-          - name: country_region
-            description: "Tabela com informações de região do país."
+      - name: country_region
+        description: "Tabela com informações de região do país."
+        
+      - name: countryregioncode
+        description: "Código da região do país."    
 
-          - name: countryregioncode
-            description: "Código da região do país."
- 
-          - name: country_name
-            description: "Nome do país."
+      - name: country_name
+        description: "Nome do país."    
 
-          - name: sales_territory
-            description: "Tabela com dados de território de vendas, incluindo regiões, vendas e continente."
+      - name: sales_territory
+        description: "Tabela com dados de território de vendas, incluindo regiões, vendas e continente."   
 
-          - name: territoryid
-            description: "ID único para cada território de vendas."
+      - name: territoryid
+        description: "ID único para cada território de vendas."     
 
-          - name: region_name
-            description: "Nome da região de vendas."
+      - name: region_name
+        description: "Nome da região de vendas."  
 
-          - name: continent
-            description: "Continente ao qual o território pertence."
+      - name: continent
+        description: "Continente ao qual o território pertence."  
 
-          - name: salesytd
-            description: "Vendas acumuladas do ano."
-            
-          - name: saleslastyear
-            description: "Vendas do ano anterior."
+      - name: salesytd
+        description: "Vendas acumuladas do ano."   
+           
+      - name: saleslastyear
+        description: "Vendas do ano anterior."            
