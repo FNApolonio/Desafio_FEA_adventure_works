@@ -1,10 +1,15 @@
-
 version: 2
 
 models:
-  - name: int_customer_details
+  - name: dim_customers
     description: "Esta tabela reúne informações sobre os clientes."
     columns:
+      - name: sk_customer
+        description: "Chave SK gerada para o identificador exclusivo da tabela com base nas colunas customerid, businessentityid e fullname."
+        tests:
+          - unique
+          - not_null
+
       - name: customerid
         description: "ID único do cliente."
         tests:

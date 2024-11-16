@@ -1,9 +1,15 @@
 version: 2
 
 models:
-  - name: int_reason_details
+  - name: dim_reason
     description: "Esta tabela reúne informações sobre endereços, cidades e país/região relacionados aos clientes."
     columns:
+      - name: sk_reason
+        description: "Chave SK gerada para o identificador exclusivo da tabela com base nas colunas salesorderid e promotion_names_agg."
+        tests: 
+          - unique
+          - not_null
+
       - name: salesorderid
         description: "ID único do pedido de venda."
         tests: 

@@ -1,6 +1,5 @@
 {{ config(materialized='table') }}
 
-
 with
     dim_region as (
         select

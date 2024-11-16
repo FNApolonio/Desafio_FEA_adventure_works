@@ -1,13 +1,20 @@
 version: 2
 
 models:
-  - name: int_product_details
+  - name: dim_product
     description: "Tabela com informações do produto."
     columns:
+      - name: sk_product
+        description: "Chave SK gerada para o identificador exclusivo da tabela com base nas colunas productid e productnumber."
+        tests: 
+          - unique
+          - not_null
+
       - name: productid
         description: "ID único para cada produto."
-        tests:
+        tests: 
           - unique
+          - not_null
 
       - name: productsubcategoryid
         description: "ID da subcategoria do produto."
