@@ -1,7 +1,4 @@
--- models/marts/d_customers.sql
-
 {{ config(materialized='table') }}
-
 
 with
     dim_reason as (
@@ -10,7 +7,6 @@ with
             , *
         from {{ ref('int_reason_details') }}
     )
-
 
 select *
 from dim_reason

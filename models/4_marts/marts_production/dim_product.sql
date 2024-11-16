@@ -1,5 +1,3 @@
--- models/marts/d_redit_card.sql
-
 {{ config(materialized='table') }}
 
 

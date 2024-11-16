@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Esta tabela reúne informações sobre os clientes."
+    columns:
+      - name: sk_customer
+        description: "Chave SK gerada para o identificador exclusivo da tabela com base nas colunas customerid, businessentityid e fullname."
+        tests:
+          - unique
+          - not_null
+
+      - name: customerid
+        description: "ID único do cliente."
+        tests:
+          - unique
+          - not_null
+
+      - name: storeid
+        description: "ID da loja associada ao cliente."
+
+      - name: person_details
+        description: "Tabela com detalhes pessoais de indivíduos."
+
+      - name: businessentityid
+        description: "ID único da entidade."
+        tests: 
+          - unique
+          
+      - name: persontype
+        description: "Tipo de pessoa (ex.: cliente."
+
+      - name: firstname
+        description: "Primeiro nome."
+
+      - name: middlename
+        description: "Nome do meio."
+
+      - name: lastname
+        description: "Sobrenome."
+        
+      - name: fullname
+        description: "Nome completo da pessoa."

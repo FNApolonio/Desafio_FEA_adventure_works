@@ -1,7 +1,4 @@
--- models/marts/d_customers.sql
-
 {{ config(materialized='table') }}
-
 
 with
     dim_customer as (

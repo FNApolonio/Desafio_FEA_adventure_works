@@ -1,9 +1,15 @@
 version: 2
 
 models:
-  - name: int_region_details
+  - name: dim_region
     description: "Esta tabela reúne informações sobre endereços, cidades e país/região relacionadas aos clientes."
-    columns:    
+    columns:
+      - name: sk_region
+        description: "Chave SK gerada para o identificador exclusivo da tabela com base nas colunas address_id, addressline e city."
+        tests:
+          - unique
+          - not_null 
+
       - name: addressid
         description: "ID único para cada endereço."
         tests:
@@ -53,4 +59,4 @@ models:
         description: "Vendas acumuladas do ano."   
            
       - name: saleslastyear
-        description: "Vendas do ano anterior."            
+        description: "Vendas do ano anterior."

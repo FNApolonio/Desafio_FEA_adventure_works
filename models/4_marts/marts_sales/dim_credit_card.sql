@@ -1,7 +1,4 @@
--- models/marts/d_redit_card.sql
-
 {{ config(materialized='table') }}
-
 
 with
     dim_credit_card as (

@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_credit_card
-    description: "This table brings together information about customers' card details."
+    description: "Esta tabela reúne informações sobre os detalhes do cartão dos clientes."
     columns:
       - name: sk_credit_card
         description: "SK key generated for the table's unique identifier based on the creditcardid and cardtype columns."
@@ -11,15 +11,15 @@ models:
           - not_null
 
       - name: creditcardid
-        description: "Credit card identification number. Foreign key to CreditCard.CreditCardID."
+        description: "Número de identificação do cartão de crédito. Chave estrangeira para CreditCard.CreditCardID."
         tests:  
           - unique
           - not_null
 
       - name: businessentityid
-        description: "Business entity identification number. Foreign key to Person.BusinessEntityID."
+        description: "Número de identificação da entidade comercial. Chave estrangeira para Person.BusinessEntityID."
 
       - name: cardtype
-        description: "Credit card name."
+        description: "Nome do cartão de crédito."
         tests:  
           - not_null
