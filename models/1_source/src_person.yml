@@ -12,16 +12,22 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: persontype
             description: "Tipo de pessoa (ex.: cliente, funcionário)."
+
           - name: firstname
             description: "Primeiro nome."
+
           - name: middlename
             description: "Nome do meio (opcional)."
+
           - name: lastname
             description: "Sobrenome."
+            
           - name: fullname
             description: "Nome completo."
+
           - name: modifieddate
             description: "Data da última modificação."
 
@@ -33,10 +39,13 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: addressline
             description: "Rua e número do endereço."
+
           - name: city
             description: "Cidade."
+
           - name: stateprovinceid
             description: "ID do estado ou província."
 
@@ -48,8 +57,10 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: country_name
             description: "Nome completo do país/região."
+
           - name: modifieddate
             description: "Data da última modificação."
 
@@ -61,14 +72,18 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: name_province
             description: "Nome do estado/província."
+
           - name: territoryid
             description: "ID do território."
+            
           - name: stateprovincecode
             description: "Código do estado/província."
+
           - name: countryregioncode
             description: "Código do país/região associado."
+
           - name: modifieddate
             description: "Data da última atualização."
-

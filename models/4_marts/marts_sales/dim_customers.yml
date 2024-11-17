@@ -16,17 +16,14 @@ models:
           - unique
           - not_null
 
-      - name: storeid
-        description: "ID da loja associada ao cliente."
-
-      - name: person_details
-        description: "Tabela com detalhes pessoais de indivíduos."
-
       - name: businessentityid
         description: "ID único da entidade."
         tests: 
           - unique
-          
+
+      - name: storeid
+        description: "ID da loja associada ao cliente."
+
       - name: persontype
         description: "Tipo de pessoa (ex.: cliente."
 

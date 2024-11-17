@@ -12,12 +12,16 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: productsubcategoryid
             description: "ID da subcategoria do produto."
+
           - name: product_name
             description: "Nome do produto no catálogo."
+
           - name: listprice
             description: "Preço de lista do produto."
+
           - name: modifieddate
             description: "Data da última atualização do produto."
 
@@ -29,7 +33,9 @@ sources:
             tests:
               - unique
               - not_null
+
           - name: product_category
             description: "Nome da categoria do produto."
+            
           - name: modifieddate
             description: "Data da última atualização da categoria."

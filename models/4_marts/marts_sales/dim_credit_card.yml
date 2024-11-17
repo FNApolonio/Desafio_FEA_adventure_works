@@ -16,10 +16,10 @@ models:
           - unique
           - not_null
 
-      - name: businessentityid
-        description: "Número de identificação da entidade comercial. Chave estrangeira para Person.BusinessEntityID."
-
       - name: cardtype
         description: "Nome do cartão de crédito."
         tests:  
           - not_null
+
+      - name: businessentityid
+        description: "Número de identificação da entidade comercial. Chave estrangeira para Person.BusinessEntityID."
