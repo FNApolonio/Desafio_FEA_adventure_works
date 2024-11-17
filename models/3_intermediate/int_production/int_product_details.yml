@@ -8,6 +8,7 @@ models:
         description: "ID único para cada produto."
         tests:
           - unique
+          - not_null
 
       - name: productsubcategoryid
         description: "ID da subcategoria do produto."
