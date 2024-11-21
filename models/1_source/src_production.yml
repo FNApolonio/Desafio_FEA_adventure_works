@@ -14,7 +14,7 @@ sources:
               - not_null
 
           - name: productsubcategoryid
-            description: "ID da subcategoria do produto."
+            description: "O produto é um membro desta subcategoria de produto. Chave estrangeira para ProductSubCategory.ProductSubCategoryID."
 
           - name: product_name
             description: "Nome do produto no catálogo."

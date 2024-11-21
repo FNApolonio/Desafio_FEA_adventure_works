@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: fact_sales_header
+    description: "Informações gerais sobre pedidos de vendas."
+    columns:
+      - name: salesorderid
+        description: "Chave primeria."
+        tests:  
+          - unique
+          - not_null
+
+      - name: fk_region
+        description: "Chave estrangeira para a dimensão da região."
+        tests:
+          - relationships:
+              to: ref('dim_region')
+              field: sk_region
+
+      - name: fk_credit_card
+        description: "Chave estrangeira para a dimensão do cartão de crédito."
+        tests:
+          - relationships:
+              to: ref('dim_credit_card')
+              field: sk_creditcard
+
+      - name: fk_customer
+        description: "Chave estrangeira para a dimensão do cliente."
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: sk_customer
+
+      - name: fk_calendar
+        description: "Chave estrangeira para a dimensão do calendário."
+        tests:
+          - relationships:
+              to: ref('dim_calendar')
+              field: sk_calendar
+          - not_null
+
+      - name: reason_agg
+        description: "Motivo de vendas agregado por pedido."
+        tests: 
+          - not_null
+
+      - name: orderdate
+        description: "Datas em que o pedido de venda foi criado."
+
+      - name: duedate
+        description: "Data em que o pedido deve ser entregue ao cliente."
+
+      - name: shipdate
+        description: "Data em que o pedido foi enviado ao cliente."
+
+      - name: order_status
+        description: "Status atual do pedido."
+
+      - name: sales_channel
+        description: "Canal de vendas, que pode ser físico ou online."
+        tests:
+          - not_null
+
+      - name: subtotal
+        description: "Subtotal de vendas. Calculado como SUM(SalesOrderDetail.LineTotal) para o SalesOrderID apropriado."
+
+      - name: taxamt
+        description: "Valor do imposto."
+
+      - name: freight
+        description: "Custo de envio."
+        
+      - name: totaldue
+        description: "Total devido pelo cliente. Calculado como Subtotal + TaxAmt + Frete."

@@ -14,7 +14,9 @@ sources:
               - not_null
 
           - name: persontype
-            description: "Tipo de pessoa (ex.: cliente, funcionário)."
+            description: > 
+              "Tipo primário de pessoa: SC = Contato da loja, IN = Cliente individual (varejo), SP = Vendedor,
+              EM = Funcionário (não vendas), VC = Contato do fornecedor, GC = Contato geral"
 
           - name: firstname
             description: "Primeiro nome."
@@ -77,13 +79,13 @@ sources:
             description: "Nome do estado/província."
 
           - name: territoryid
-            description: "ID do território."
+            description: "ID do território em que o estado ou província está localizado. Chave estrangeira para SalesTerritory.SalesTerritoryID."
             
           - name: stateprovincecode
             description: "Código do estado/província."
 
           - name: countryregioncode
-            description: "Código do país/região associado."
+            description: "Código de país ou região padrão ISO. Chave estrangeira para CountryRegion.CountryRegionCode."
 
           - name: modifieddate
             description: "Data da última atualização."
