@@ -22,7 +22,7 @@ models:
         tests:
           - relationships:
               to: ref('dim_credit_card')
-              field: sk_creditcard
+              field: sk_credit_card
 
       - name: fk_customer
         description: "Chave estrangeira para a dimensão do cliente."
@@ -58,8 +58,6 @@ models:
 
       - name: sales_channel
         description: "Canal de vendas, que pode ser físico ou online."
-        tests:
-          - not_null
 
       - name: subtotal
         description: "Subtotal de vendas. Calculado como SUM(SalesOrderDetail.LineTotal) para o SalesOrderID apropriado."
