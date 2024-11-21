@@ -44,7 +44,7 @@ with
             , salesheader.duedate
             , salesheader.shipdate
             , case
-                when salesheader.status = 1 then 'Em process'
+                when salesheader.status = 1 then 'Em processo'
                 when salesheader.status = 2 then 'Aprovado'
                 when salesheader.status = 3 then 'Em falta'
                 when salesheader.status = 4 then 'Rejeitado'
