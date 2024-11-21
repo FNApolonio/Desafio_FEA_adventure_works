@@ -2,6 +2,7 @@ with
     order_header as (
         select
             salesorderid
+            , billtoaddressid
             , customerid
             , territoryid
             , status 

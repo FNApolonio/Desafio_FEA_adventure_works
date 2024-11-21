@@ -23,7 +23,7 @@ sources:
           description: "Dados dos clientes."
           columns:
             - name: customerid
-              description: "Identificador único do cliente."
+              description: "Chave primária"
               tests:
                 - unique
                 - not_null
@@ -79,7 +79,10 @@ sources:
                 - not_null
           
             - name: customerid
-              description: "Identificador do cliente que fez o pedido."
+              description: "Número de identificação do cliente. Chave estrangeira para Customer.BusinessEntityID."
+
+            - name: billtoaddressid
+              description: "Endereço de cobrança do cliente. Chave estrangeira para Address.AddressID."
 
             - name: territoryid
               description: "Identificador do território do pedido."
@@ -88,7 +91,7 @@ sources:
               description: "Status atual do pedido. 1 = Em processamento; 2 = Aprovado; 3 = Em espera; 4 = Rejeitado; 5 = Enviado; 6 = Cancelado"
 
             - name: onlineorderflag
-              description: "Indica se o pedido foi feito online (0 = Não, 1 = Sim)."
+              description: "0 = Pedido feito pelo vendedor. 1 = Pedido feito on-line pelo cliente."
 
             - name: creditcardid
               description: "Identificador do cartão de crédito utilizado."

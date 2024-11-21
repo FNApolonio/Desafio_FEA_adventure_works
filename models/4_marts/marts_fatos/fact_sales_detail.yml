@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fact_sales_detail
+    description: "Esta é uma tabela para produtos individuais associados a um pedido de venda específico."
+    columns:
+      - name: salesorderid
+        description: "Chave estrangeira para SalesOrderHeader.SalesOrderID."
+        tests:  
+          - not_null
+
+      - name: fk_product
+        description: "Chave estrangeira para a tabela de produtos dProduct."
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: sk_product
+          - not_null
+
+      - name: productid
+        description: "Produto vendido ao cliente. Chave estrangeira para Product.ProductID."
+
+      - name: orderqty
+        description: "Quantidade pedida por produto."
+
+      - name: unitprice
+        description: "Preço de venda de um único produto."
+
+      - name: unitpricediscount
+        description: "Valor do desconto."
+
+      - name: linetotal
+        description: "Por subtotal do produto. Calculado como UnitPrice * (1 - UnitPriceDiscount) * OrderQty."
