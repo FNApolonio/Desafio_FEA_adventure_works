@@ -11,6 +11,15 @@ with
         from {{ ref('stg_product') }}
     )
     
+    , product_subcategory as (
+        select
+            productsubcategoryid
+            , productcategoryid
+            , product_subcategory
+            , modifieddate
+        from {{ ref('stg_productsubcategory') }}
+    )
+
     , product_category as (
         select 
             productcategoryid
@@ -23,20 +32,22 @@ with
         select
             p.productid
             , p.productsubcategoryid
+            , pc.productcategoryid
             , p.product_name
-            , p.listprice
+            , ps.product_subcategory
             , pc.product_category
+            , p.listprice
         from
             product p
         left join
-            product_category pc
+            product_subcategory ps
         on
-            p.productsubcategoryid = pc.productcategoryid
+            p.productsubcategoryid = ps.productsubcategoryid
+        left join
+            product_category pc
+        on ps.productcategoryid = pc.productcategoryid
+
     ) 
 
 select *
 from joined_product
-
-
-
-

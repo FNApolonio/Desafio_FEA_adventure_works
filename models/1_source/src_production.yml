@@ -25,6 +25,24 @@ sources:
           - name: modifieddate
             description: "Data da última atualização do produto."
 
+      - name: productsubcategory
+        description: "Subcategorias de produtos."
+        columns:
+          - name: productsubcategoryid
+            description: "Chave primária para registros ProductSubcategory."
+            tests:
+              - unique
+              - not_null
+
+          - name: productcategoryid
+            description: "Número de identificação da categoria do produto. Chave estrangeira para ProductCategory.ProductCategoryID."
+
+          - name: product_subcategory
+            description: "Descrição da subcategoria."
+
+          - name: modifieddate
+            description: "Data da última atualização da subcategoria."
+
       - name: productcategory
         description: "Tabela de categorias principais dos produtos para organização hierárquica."
         columns:

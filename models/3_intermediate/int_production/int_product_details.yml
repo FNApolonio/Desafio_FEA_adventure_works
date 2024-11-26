@@ -13,11 +13,17 @@ models:
       - name: productsubcategoryid
         description: "ID da subcategoria do produto."
 
+      - name: productcategoryid
+        description: "Chave primária para registros ProductCategory."
+
       - name: product_name
         description: "Nome do produto."
-
-      - name: listprice
-        description: "Preço de lista do produto."
+      
+      - name: product_subcategory
+        description: "Descrição da subcategoria."
 
       - name: product_category
         description: "Tabela com informações sobre categorias de produtos."
+
+      - name: listprice
+        description: "Preço de lista do produto."
