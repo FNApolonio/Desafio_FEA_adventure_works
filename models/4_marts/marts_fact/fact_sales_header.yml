@@ -44,6 +44,9 @@ models:
         tests: 
           - not_null
 
+      - name: reason_types_agg
+        description: "Categoria à qual o motivo da venda pertence."
+
       - name: orderdate
         description: "Datas em que o pedido de venda foi criado."
 

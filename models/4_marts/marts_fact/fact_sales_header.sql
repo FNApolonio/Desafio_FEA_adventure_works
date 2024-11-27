@@ -40,6 +40,7 @@ with
             , dim_customers.sk_customer as fk_customer
             , dim_calendar.sk_calendar as fk_calendar
             , ifnull(dim_reason.promotion_names_agg, 'não informado') as reason_agg
+            , dim_reason.reason_types_agg as reason_types_agg
             , salesheader.orderdate
             , salesheader.duedate
             , salesheader.shipdate
